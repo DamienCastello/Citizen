@@ -1,19 +1,20 @@
 import * as React from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
 
-function SettingsScreen({navigation}) {
+function SignUpScreen({navigation}) {
   return (
     <View style={styles.container}>
-      <Text>Settings Screen</Text>
+      <Text>SignUp Screen</Text>
       <Button
-        title="Go to Details"
+        title="Go to SignUp"
         onPress={() => navigation.navigate('Home')}
       />
     </View>
   );
 }
 
-export default SettingsScreen;
+
+export default SignUpScreen;
 
 const styles = StyleSheet.create({
   container: {
