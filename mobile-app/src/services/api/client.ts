@@ -20,23 +20,24 @@ const request = async (method, args): Promise<AxiosResponse> => {
     promise = axios.post(url, data, { ...options })
   } else {
     const { url, options } = args
+    console.log("check url of promise : ", url)
     promise = axios.get(url, { ...options })
   }
 
   return promise
 }
 
-export const get = (url, options = {}) => {
+export const get = (url:string, options = {}) => {
   return request("get", { url, options })
 }
 
-export const post = (url, data = {}, options = {}) => {
+export const post = (url:string, data = {}, options = {}) => {
   console.log("CHECK MY PARAMS : ", url, data, options)
   return request("post", { url, data, options })
 }
 
-export const dataPersonRequest = (data) => {
-  return post("api", data)
+export const getActuality = (id:string) => {
+  return get(api_prefix + "actualities/" + id)
 }
 
 export const login = (data) => {

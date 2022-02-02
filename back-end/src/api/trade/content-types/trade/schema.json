@@ -1,0 +1,33 @@
+{
+  "kind": "collectionType",
+  "collectionName": "trades",
+  "info": {
+    "singularName": "trade",
+    "pluralName": "trades",
+    "displayName": "Trade",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "progress": {
+      "type": "string",
+      "required": true,
+      "default": "proposal"
+    },
+    "needs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::need.need",
+      "mappedBy": "trade"
+    },
+    "offers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::offer.offer",
+      "mappedBy": "trade"
+    }
+  }
+}

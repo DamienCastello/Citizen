@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "needs",
+  "info": {
+    "singularName": "need",
+    "pluralName": "needs",
+    "displayName": "Need",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "needs"
+    },
+    "travel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::travel.travel",
+      "inversedBy": "needs"
+    },
+    "good": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::good.good",
+      "inversedBy": "needs"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "inversedBy": "needs"
+    },
+    "trade": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::trade.trade",
+      "inversedBy": "needs"
+    }
+  }
+}

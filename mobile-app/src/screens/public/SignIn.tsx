@@ -7,7 +7,7 @@ import { SafeAreaView } from "react-native-safe-area-context"
 
 import { InformationMessage } from "../../components/stateless/InformationMessage"
 import useAxios from "../../hooks/useAxios"
-import { login } from "../../services/api/client"
+import { getActuality, login } from "../../services/api/client"
 import { USER_LOG_DATA, USER_TOKEN, getSecureStorage, setSecureStorage } from "../../utilities/SecureStorage"
 import { AuthContext } from "../../utilities/Context";
 
@@ -196,6 +196,21 @@ export const SignInScreen = ({ navigation }) => {
               }}
             >
               <Text style={styles.TextStyle}>Mot de passe oublié ?</Text>
+            </TouchableOpacity>
+            <TouchableOpacity
+              style={styles.SubmitButtonStyle}
+              activeOpacity = { .5 }
+              onPress={() => {
+                getActuality(1)
+                .then((response) => {
+                  console.log("actuality 1 : ", response)
+                })
+                .catch((error) => {
+                  console.log("error on actuality : ", error)
+                })
+              }}
+            >
+              <Text style={styles.TextStyle}>Test get actuality 1</Text>
             </TouchableOpacity>
           </View>
         </View>

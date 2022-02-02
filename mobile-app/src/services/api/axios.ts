@@ -1,8 +1,8 @@
 import axios from "axios"
 
 const instance = axios.create({
-  baseURL: "https://CrenoBaseURL.glanum.net/",
-  timeout: 12000,
+  baseURL: "http://localhost:1337/",
+  //timeout: 12000,
   headers: {
     Accept: "application/json",
   },

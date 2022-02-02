@@ -1,0 +1,36 @@
+{
+  "kind": "collectionType",
+  "collectionName": "travels",
+  "info": {
+    "singularName": "travel",
+    "pluralName": "travels",
+    "displayName": "Travel",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "from": {
+      "type": "text",
+      "required": true
+    },
+    "to": {
+      "type": "text",
+      "required": true
+    },
+    "needs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::need.need",
+      "mappedBy": "travel"
+    },
+    "offers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::offer.offer",
+      "mappedBy": "travel"
+    }
+  }
+}

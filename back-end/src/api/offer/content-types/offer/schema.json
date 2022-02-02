@@ -1,0 +1,53 @@
+{
+  "kind": "collectionType",
+  "collectionName": "offers",
+  "info": {
+    "singularName": "offer",
+    "pluralName": "offers",
+    "displayName": "Offer",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text"
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "offers"
+    },
+    "travel": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::travel.travel",
+      "inversedBy": "offers"
+    },
+    "good": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::good.good",
+      "inversedBy": "offers"
+    },
+    "service": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::service.service",
+      "inversedBy": "offers"
+    },
+    "trade": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "api::trade.trade",
+      "inversedBy": "offers"
+    }
+  }
+}
