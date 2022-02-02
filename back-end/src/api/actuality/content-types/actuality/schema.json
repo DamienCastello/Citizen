@@ -1,0 +1,38 @@
+{
+  "kind": "collectionType",
+  "collectionName": "actualities",
+  "info": {
+    "singularName": "actuality",
+    "pluralName": "actualities",
+    "displayName": "Actuality",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "image": {
+      "type": "media",
+      "multiple": false,
+      "required": false,
+      "allowedTypes": [
+        "images"
+      ]
+    },
+    "content": {
+      "type": "text",
+      "required": true
+    },
+    "user": {
+      "type": "relation",
+      "relation": "manyToOne",
+      "target": "plugin::users-permissions.user",
+      "inversedBy": "actualities"
+    }
+  }
+}

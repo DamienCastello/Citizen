@@ -1,0 +1,35 @@
+{
+  "kind": "collectionType",
+  "collectionName": "goods",
+  "info": {
+    "singularName": "good",
+    "pluralName": "goods",
+    "displayName": "Good",
+    "description": ""
+  },
+  "options": {
+    "draftAndPublish": true
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "title": {
+      "type": "string",
+      "required": true
+    },
+    "content": {
+      "type": "text"
+    },
+    "needs": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::need.need",
+      "mappedBy": "good"
+    },
+    "offers": {
+      "type": "relation",
+      "relation": "oneToMany",
+      "target": "api::offer.offer",
+      "mappedBy": "good"
+    }
+  }
+}
