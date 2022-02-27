@@ -1,29 +1,22 @@
-import * as React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Button, StyleSheet, Text, View } from 'react-native';
-import { AuthContext } from '../../utilities/Context';
 
-function DetailsScreen({navigation}) {
-  const { signOut } = React.useContext(AuthContext);
-
+function Actualities({ navigation, actualities }) {
+  
   return (
     <View style={styles.container}>
-      <Text>Details Screen</Text>
+      <Text>Atulities Screen</Text>
       <Button
         title="Go to Home"
         onPress={() => navigation.navigate('Home')}
       />
-      <Button
-        title="Sign out"
-        onPress={() => {
-          signOut()
-        }}
-      />
+      { actualities.map((actuality) => {
+        <Text>{ actuality.title }</Text>
+      }) }
     </View>
   );
 }
-
-
-export default DetailsScreen;
+export default Actualities;
 
 const styles = StyleSheet.create({
   container: {

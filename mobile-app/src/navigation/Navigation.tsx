@@ -4,7 +4,7 @@ import * as React from 'react';
 import { AuthContext } from "../utilities/Context";
 import { FontAwesome5 } from '@expo/vector-icons';
 
-import DetailsScreen from '../screens/connected/Details';
+import ActualitiesScreen from '../screens/connected/ActualitiesScreen';
 import SettingsScreen from '../screens/connected/Settings';
 import { SignInScreen } from '../screens/public/SignIn';
 import { Splash } from '../screens/public/Splash';
@@ -47,7 +47,7 @@ const HomeStackScreen = () => (
       component={Tabs}
       options={{ headerTitle: () => <LogoTitle title="Home" /> }}
     />
-    <HomeStack.Screen name="Details" component={DetailsScreen} />
+    <HomeStack.Screen name="Actualities" component={ActualitiesScreen} />
     <HomeStack.Screen name="Settings" component={SettingsScreen} />
   </HomeStack.Navigator>
 

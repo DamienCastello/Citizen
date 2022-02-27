@@ -36,9 +36,13 @@ export const post = (url:string, data = {}, options = {}) => {
   return request("post", { url, data, options })
 }
 
-export const getActuality = (id:string) => {
-  return get(api_prefix + "actualities/" + id)
+export const getActualities = () => {
+  return get(api_prefix + "actualities")
 }
+
+export const getActuality = (id:string) => {
+    return get(api_prefix + "actualities/" + id)
+  }
 
 export const login = (data) => {
   return post(api_prefix + "auth/login", data)
